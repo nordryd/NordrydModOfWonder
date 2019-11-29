@@ -7,8 +7,8 @@ import com.nordryd.nmow.items.ModItem;
 
 import net.minecraft.item.Item;
 
-public class ModItems {
-	public static final List<Item> MOD_ITEMS = new ArrayList<>();
+public interface ModItems {
+	List<Item> MOD_ITEMS = new ArrayList<>();
 	
-	public static final Item TEST_ITEM = new ModItem("test_item");
+	Item TEST_ITEM = new ModItem("test_item");
 }

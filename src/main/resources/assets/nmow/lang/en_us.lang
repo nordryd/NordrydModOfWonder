@@ -1,0 +1,8 @@
+// items
+item.test_item.name=TEST ITEM
+
+// blocks
+tile.test_block.name=TEST BLOCK
+
+// creative tabs
+itemGroup.tab_master=NMOW: MASTER

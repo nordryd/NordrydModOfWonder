@@ -1,20 +1,20 @@
 package com.nordryd.nmow.proxy;
 
-import com.nordryd.nmow.Main;
+import static com.nordryd.nmow.util.Reference.MODID;
+import static net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 
-public class ClientProxy extends CommonProxy {
-	@Override
-	public void registerItemRenderer(Item item, int meta, String id) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
-	}
+public class ClientProxy implements CommonProxy {
+    @Override
+    public void registerItemRenderer(final Item item, final int meta, final String id) {
+        setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    }
 
-	@Override
-	public void registerVariantRenderer(Item item, int meta, String filename, String id) {
-		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Main.MODID, filename), id));
-	}
+    @Override
+    public void registerVariantRenderer(final Item item, final int meta, final String filename, final String id) {
+        setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(MODID, filename), id));
+    }
 }

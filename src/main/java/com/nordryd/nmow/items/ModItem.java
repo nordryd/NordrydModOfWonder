@@ -1,30 +1,27 @@
 package com.nordryd.nmow.items;
 
-import com.nordryd.nmow.Main;
-import com.nordryd.nmow.init.ModItems;
-import com.nordryd.nmow.util.IHasModel;
+import static com.nordryd.nmow.Main.proxy;
+import static com.nordryd.nmow.init.ModCreativeTabs.MASTER;
+import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 
+import com.nordryd.nmow.util.IHasModel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ModItem extends Item implements IHasModel {
-	public ModItem(String name) {
+    public ModItem(final String name, final CreativeTabs creativeTab) {
+        setUnlocalizedName(name);
+        setRegistryName(name);
+        setCreativeTab(creativeTab);
+        MOD_ITEMS.add(this);
+    }
 
-		// Sets the item's name with "item" prepended.
-		setUnlocalizedName(name);
+    public ModItem(final String name) {
+        this(name, MASTER);
+    }
 
-		// Sets name in the registry
-		setRegistryName(name);
-
-		// Sets item to go into the MATERIALS tab of creative mode
-		setCreativeTab(CreativeTabs.MISC);
-
-		// Tell minecraft that this [object] is an item
-		ModItems.MOD_ITEMS.add(this);
-	}
-
-	@Override
-	public void registerModels() {
-		Main.proxy.registerItemRenderer(this, 0, "inventory");
-	}
+    @Override
+    public void registerModels() {
+        proxy.registerItemRenderer(this, 0, "inventory");
+    }
 }
