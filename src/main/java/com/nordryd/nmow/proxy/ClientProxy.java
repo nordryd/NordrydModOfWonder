@@ -1,6 +1,6 @@
 package com.nordryd.nmow.proxy;
 
-import static com.nordryd.nmow.util.Reference.MODID;
+import static com.nordryd.nmow.util.ModReference.MODID;
 import static net.minecraftforge.client.model.ModelLoader.setCustomModelResourceLocation;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

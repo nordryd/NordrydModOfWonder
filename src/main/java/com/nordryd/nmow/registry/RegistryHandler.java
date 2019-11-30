@@ -12,19 +12,19 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @EventBusSubscriber
-public class RegistryHandler {
+public interface RegistryHandler {
     @SubscribeEvent
-    public static void onItemRegister(final Register<Item> event) {
+    static void onItemRegister(final Register<Item> event) {
         event.getRegistry().registerAll(MOD_ITEMS.toArray(new Item[0]));
     }
 
     @SubscribeEvent
-    public static void onBlockRegister(final Register<Block> event) {
+    static void onBlockRegister(final Register<Block> event) {
         event.getRegistry().registerAll(MOD_BLOCKS.toArray(new Block[0]));
     }
 
     @SubscribeEvent
-    public static void onModelRegister(final ModelRegistryEvent event) {
+    static void onModelRegister(final ModelRegistryEvent event) {
     	MOD_ITEMS.stream().filter(IHasModel.class::isInstance).forEach(item -> ((IHasModel)item).registerModels());
         MOD_BLOCKS.stream().filter(IHasModel.class::isInstance).forEach(block -> ((IHasModel)block).registerModels());
     }

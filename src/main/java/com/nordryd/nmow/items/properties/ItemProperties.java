@@ -1,15 +1,14 @@
-package com.nordryd.nmow.items.builders;
+package com.nordryd.nmow.items.properties;
 
 import com.nordryd.nmow.init.ModCreativeTabs;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class ItemProperties {
     private final String name;
-    private CreativeTabs creativeTab;
+    private CreativeTabs creativeTab = ModCreativeTabs.MASTER;
 
     public ItemProperties(final String name) {
         this.name = name;
-        this.creativeTab = ModCreativeTabs.MASTER;
     }
 
     public String name(){

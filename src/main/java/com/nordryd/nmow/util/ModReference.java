@@ -1,6 +1,6 @@
 package com.nordryd.nmow.util;
 
-public interface Reference {
+public interface ModReference {
     String MODID = "nmow";
     String NAME = "Nordryd's Mod of Wonder";
     String VERSION = "1.0";

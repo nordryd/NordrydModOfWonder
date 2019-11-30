@@ -1,7 +1,7 @@
 package com.nordryd.nmow.block;
 
-import com.nordryd.nmow.block.builders.BlockProperties;
-import com.nordryd.nmow.block.builders.OreProperties;
+import com.nordryd.nmow.block.properties.BlockProperties;
+import com.nordryd.nmow.block.properties.OreProperties;
 
 public class ModOre extends ModBlock {
 

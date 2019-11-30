@@ -5,7 +5,7 @@ import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 import static net.minecraft.item.Item.getItemFromBlock;
 
-import com.nordryd.nmow.block.builders.BlockProperties;
+import com.nordryd.nmow.block.properties.BlockProperties;
 import com.nordryd.nmow.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

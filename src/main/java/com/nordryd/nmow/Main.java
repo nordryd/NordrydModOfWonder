@@ -1,10 +1,11 @@
 package com.nordryd.nmow;
 
-import static com.nordryd.nmow.util.Reference.CLIENT_PROXY_CLASS;
-import static com.nordryd.nmow.util.Reference.COMMON_PROXY_CLASS;
-import static com.nordryd.nmow.util.Reference.MODID;
-import static com.nordryd.nmow.util.Reference.NAME;
-import static com.nordryd.nmow.util.Reference.VERSION;
+import static com.nordryd.nmow.init.ModRecipes.initSmeltingRecipes;
+import static com.nordryd.nmow.util.ModReference.CLIENT_PROXY_CLASS;
+import static com.nordryd.nmow.util.ModReference.COMMON_PROXY_CLASS;
+import static com.nordryd.nmow.util.ModReference.MODID;
+import static com.nordryd.nmow.util.ModReference.NAME;
+import static com.nordryd.nmow.util.ModReference.VERSION;
 
 import com.nordryd.nmow.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -24,10 +25,12 @@ public class Main {
     public static CommonProxy proxy;
 
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event) {}
+    public void preInit(final FMLPreInitializationEvent event) {}
 
     @EventHandler
-    public void init(FMLInitializationEvent event) {}
+    public void init(final FMLInitializationEvent event) {
+        initSmeltingRecipes();
+    }
 
     @EventHandler
     public void postInit(final FMLPostInitializationEvent event) {}

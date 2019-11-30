@@ -1,7 +1,9 @@
-package com.nordryd.nmow.block.builders;
+package com.nordryd.nmow.block.properties;
+
+import static com.nordryd.nmow.util.values.Dimensions.OVERWORLD;
 
 public class OreProperties {
-    private int dimensionId, spawnChance, minVeinSize, maxVeinSize, minHeight, maxHeight;
+    private int dimensionId = OVERWORLD, spawnChance = 20, minVeinSize = 1, maxVeinSize = 6, minHeight = 1, maxHeight = 255;
 
     public int dimensionId() {
         return dimensionId;

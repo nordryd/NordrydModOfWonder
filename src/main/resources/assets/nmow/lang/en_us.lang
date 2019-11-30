@@ -1,8 +1,10 @@
 // items
 item.test_item.name=TEST ITEM
+item.test_food.name=TEST FOOD
 
 // blocks
 tile.test_block.name=TEST BLOCK
+tile.test_ore.name=TEST ORE
 
 // creative tabs
 itemGroup.tab_master=NMOW: MASTER

@@ -3,7 +3,7 @@ package com.nordryd.nmow.items;
 import static com.nordryd.nmow.Main.proxy;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 
-import com.nordryd.nmow.items.builders.ItemProperties;
+import com.nordryd.nmow.items.properties.ItemProperties;
 import com.nordryd.nmow.util.IHasModel;
 import net.minecraft.item.Item;
 

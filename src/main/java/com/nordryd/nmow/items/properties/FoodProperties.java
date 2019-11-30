@@ -1,8 +1,8 @@
-package com.nordryd.nmow.items.builders;
+package com.nordryd.nmow.items.properties;
 
 public class FoodProperties {
-    private int amount;
-    private float saturation;
+    private int amount = 2;
+    private float saturation = 0.6f;
     private boolean isWolfFood = false;
 
     public int amount() {

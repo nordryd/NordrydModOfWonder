@@ -1,4 +1,4 @@
-package com.nordryd.nmow.block.builders;
+package com.nordryd.nmow.block.properties;
 
 import static com.nordryd.nmow.util.values.HarvestLevel.IRON;
 import static com.nordryd.nmow.util.values.ToolType.PICKAXE;
@@ -12,8 +12,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockProperties {
     private final String name;
-    private Material material = Material.ANVIL;
-    private SoundType soundType = SoundType.ANVIL;
+    private Material material = Material.ROCK;
+    private SoundType soundType = SoundType.STONE;
     private HarvestLevel toolMaterialRequired = IRON;
     private ToolType toolTypeRequired = PICKAXE;
     private Integer lightOpacity;
@@ -70,12 +70,12 @@ public class BlockProperties {
         return creativeTab;
     }
 
-    public boolean isUnbreakable(){
+    public boolean isUnbreakable() {
         return isUnbreakable;
     }
 
     /**
-     * @param material the {@link Material} of the block. Default: ANVIL.
+     * @param material the {@link Material} of the block. Default: STONE.
      * @return the current {@link BlockProperties}
      */
     public BlockProperties material(final Material material) {
@@ -84,7 +84,7 @@ public class BlockProperties {
     }
 
     /**
-     * @param soundType the {@link SoundType sounds} the block will use. Default: ANVIL.
+     * @param soundType the {@link SoundType sounds} the block will use. Default: STONE.
      * @return the current {@link BlockProperties}
      */
     public BlockProperties soundType(final SoundType soundType) {
