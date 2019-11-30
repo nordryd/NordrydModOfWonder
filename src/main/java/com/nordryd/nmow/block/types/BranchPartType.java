@@ -1,20 +1,20 @@
-package com.nordryd.nmow.block.variant.types;
+package com.nordryd.nmow.block.types;
 
 import static java.util.Arrays.stream;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum BranchSegments implements IStringSerializable {
+public enum BranchPartType implements IStringSerializable {
 
     SEED(0, "seed"),
     STEM(1, "stem"),
     LEAF(2, "leaf");
 
-    private static final BranchSegments[] META_LOOKUP = new BranchSegments[values().length];
+    private static final BranchPartType[] META_LOOKUP = new BranchPartType[values().length];
     private final int meta;
     private final String name, unlocalizedName;
 
-    BranchSegments(final int meta, final String name) {
+    BranchPartType(final int meta, final String name) {
         this.meta = meta;
         this.name = name;
         this.unlocalizedName = name;
@@ -32,7 +32,7 @@ public enum BranchSegments implements IStringSerializable {
         return unlocalizedName;
     }
 
-    public static BranchSegments byMetadata(final int meta) {
+    public static BranchPartType byMetadata(final int meta) {
         return META_LOOKUP[meta];
     }
 

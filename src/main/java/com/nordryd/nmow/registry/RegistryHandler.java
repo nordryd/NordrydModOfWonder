@@ -2,8 +2,10 @@ package com.nordryd.nmow.registry;
 
 import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
+import static net.minecraftforge.fml.common.registry.GameRegistry.registerWorldGenerator;
 
 import com.nordryd.nmow.util.IHasModel;
+import com.nordryd.nmow.world.gen.ores.OreGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -25,7 +27,11 @@ public interface RegistryHandler {
 
     @SubscribeEvent
     static void onModelRegister(final ModelRegistryEvent event) {
-    	MOD_ITEMS.stream().filter(IHasModel.class::isInstance).forEach(item -> ((IHasModel)item).registerModels());
-        MOD_BLOCKS.stream().filter(IHasModel.class::isInstance).forEach(block -> ((IHasModel)block).registerModels());
+        MOD_ITEMS.stream().filter(IHasModel.class::isInstance).forEach(item -> ((IHasModel) item).registerModels());
+        MOD_BLOCKS.stream().filter(IHasModel.class::isInstance).forEach(block -> ((IHasModel) block).registerModels());
+    }
+
+    static void preInitRegistries() {
+        registerWorldGenerator(new OreGenerator(), 0);
     }
 }
