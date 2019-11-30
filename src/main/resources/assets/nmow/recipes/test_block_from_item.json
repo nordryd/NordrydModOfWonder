@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "TTT",
+    "TTT",
+    "TTT"
+  ],
+
+  "key":
+  {
+    "T":
+    {
+      "item": "nmow:test_item"
+    }
+  },
+
+  "result":
+  {
+    "item": "nmow:test_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    "  T",
+    "  S",
+    "  S"
+  ],
+
+  "key":
+  {
+    "T":
+    {
+      "item": "nmow:test_item"
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+
+  "result":
+  {
+    "item": "nmow:test_shovel",
+    "count": 1
+  }
+}
