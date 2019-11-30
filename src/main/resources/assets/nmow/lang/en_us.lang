@@ -1,6 +1,15 @@
 // items
 item.test_item.name=TEST ITEM
 item.test_food.name=TEST FOOD
+item.test_helmet.name=TEST HELMET
+item.test_chestplate.name=TEST CHESTPLATE
+item.test_leggings.name=TEST LEGGINGS
+item.test_boots.name=TEST BOOTS
+item.test_pickaxe.name=TEST PICKAXE
+item.test_sword.name=TEST SWORD
+item.test_hoe.name=TEST HOE
+item.test_axe.name=TEST AXE
+item.test_shovel.name=TEST SHOVEL
 
 // blocks
 tile.test_block.name=TEST BLOCK

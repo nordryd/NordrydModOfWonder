@@ -6,7 +6,7 @@ public enum HarvestLevel {
     IRON(2),
     DIAMOND(3),
     GOLD(STONE.level),
-    TEST(10);
+    TEST(69);
 
     private final int level;
 
