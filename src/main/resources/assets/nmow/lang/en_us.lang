@@ -14,6 +14,9 @@ item.test_shovel.name=TEST SHOVEL
 // blocks
 tile.test_block.name=TEST BLOCK
 tile.test_ore.name=TEST ORE
+tile.branches_seed.name=TEST BRANCH: SEED
+tile.branches_stem.name=TEST BRANCH: STEM
+tile.branches_leaf.name=TEST BRANCH: LEAF
 
 // creative tabs
 itemGroup.tab_master=NMOW: MASTER

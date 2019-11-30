@@ -1,16 +1,22 @@
 package com.nordryd.nmow.init;
 
+import static com.nordryd.nmow.block.variant.BlockVariantFactory.getBranchBlock;
+import static com.nordryd.nmow.block.variant.types.BranchSegments.LEAF;
+import static com.nordryd.nmow.block.variant.types.BranchSegments.SEED;
+import static com.nordryd.nmow.block.variant.types.BranchSegments.STEM;
 import static com.nordryd.nmow.util.values.Dimensions.OVERWORLD;
 import static com.nordryd.nmow.util.values.HarvestLevel.DIAMOND;
 import static com.nordryd.nmow.util.values.ToolType.PICKAXE;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import com.nordryd.nmow.block.ModBlock;
 import com.nordryd.nmow.block.ModOre;
 import com.nordryd.nmow.block.properties.BlockProperties;
 import com.nordryd.nmow.block.properties.OreProperties;
+import com.nordryd.nmow.block.variant.Branches;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -23,17 +29,24 @@ public interface ModBlocks {
 
     Block TEST_BLOCK = new ModBlock(
             new BlockProperties("test_block").material(Material.SNOW).soundType(SoundType.SNOW).hardness(5.0f)
-                                             .resistance(15.0f).toolTypeRequired(PICKAXE).toolMaterialRequired(DIAMOND)) {
-        @Override
-        public void onBlockAdded(final World world, final BlockPos pos, final IBlockState blockState) {
-            System.out.printf("%s added to the world!\n", blockState.getBlock().getLocalizedName());
-            super.onBlockAdded(world, pos, blockState);
-        }
-    };
+                                             .resistance(15.0f).toolTypeRequired(PICKAXE).toolMaterialRequired(DIAMOND));
 
     Block TEST_ORE = new ModOre(
             new OreProperties().dimensionId(OVERWORLD).minHeight(5).maxHeight(200).minVeinSize(5).maxVeinSize(10)
                                .spawnChance(33),
             new BlockProperties("test_ore").toolMaterialRequired(DIAMOND).toolTypeRequired(PICKAXE).lightLevel(10)
                                            .soundType(SoundType.STONE).material(Material.ROCK));
+
+    Block BRANCHES = new Branches(new BlockProperties("branches").soundType(SoundType.PLANT).material(Material.PLANTS)) {
+        public void onBlockAdded(final World world, final BlockPos pos, final IBlockState state) {
+            if (state.getValue(VARIANT) == SEED) {
+                world.setBlockState(pos.up(), getBranchBlock(STEM));
+                world.setBlockState(pos.up(2), getBranchBlock(LEAF));
+                world.setBlockState(pos.up().east(), getBranchBlock(LEAF));
+                world.setBlockState(pos.up().west(), getBranchBlock(LEAF));
+                world.setBlockState(pos.up().north(), getBranchBlock(LEAF));
+                world.setBlockState(pos.up().south(), getBranchBlock(LEAF));
+            }
+        }
+    };
 }
