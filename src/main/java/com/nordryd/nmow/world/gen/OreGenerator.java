@@ -1,9 +1,10 @@
-package com.nordryd.nmow.world.gen.ores;
+package com.nordryd.nmow.world.gen;
 
 import static com.nordryd.nmow.init.ModBlocks.MOD_ORES;
 import static com.nordryd.nmow.util.values.Dimensions.END;
 import static com.nordryd.nmow.util.values.Dimensions.NETHER;
 import static com.nordryd.nmow.util.values.Dimensions.OVERWORLD;
+import static com.nordryd.nmow.util.values.Values.CHUNK_SIZE;
 import static java.lang.String.format;
 import static java.util.stream.IntStream.range;
 import static net.minecraft.block.state.pattern.BlockMatcher.forBlock;
@@ -23,7 +24,6 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class OreGenerator implements IWorldGenerator {
-    private static final int CHUNK_SIZE = 16;
 
     @Override
     public void generate(final Random rng, final int chunkX, final int chunkZ, final World world,
