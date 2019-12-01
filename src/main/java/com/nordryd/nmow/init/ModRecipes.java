@@ -6,6 +6,7 @@ import static com.nordryd.nmow.init.ModItems.TEST_ITEM;
 import static net.minecraftforge.fml.common.registry.GameRegistry.addSmelting;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public interface ModRecipes {
     static void initSmeltingRecipes() {

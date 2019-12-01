@@ -28,7 +28,7 @@ public class OreGenerator implements IWorldGenerator {
     @Override
     public void generate(final Random rng, final int chunkX, final int chunkZ, final World world,
             final IChunkGenerator chunkGenerator, final IChunkProvider chunkProvider) {
-        MOD_ORES.stream().forEach(
+        MOD_ORES.forEach(
                 ore -> generateOre(ore, world, rng, chunkX, chunkZ, forBlock(getDimensionBaseBlock(ore.getDimensionId()))));
     }
 

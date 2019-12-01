@@ -1,10 +1,12 @@
 package com.nordryd.nmow.registry;
 
+import static com.nordryd.nmow.init.ModBiomes.MOD_BIOMES;
 import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 import static net.minecraftforge.fml.common.registry.GameRegistry.registerWorldGenerator;
 
 import com.nordryd.nmow.util.IHasModel;
+import com.nordryd.nmow.world.biomes.ModBiome;
 import com.nordryd.nmow.world.gen.OreGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -31,11 +33,8 @@ public interface RegistryHandler {
         MOD_BLOCKS.stream().filter(IHasModel.class::isInstance).forEach(block -> ((IHasModel) block).registerModels());
     }
 
-    static void registerModBiomes(){
-
-    }
-
     static void preInitRegistries() {
         registerWorldGenerator(new OreGenerator(), 0);
+        MOD_BIOMES.forEach(ModBiome::registerModBiome);
     }
 }
