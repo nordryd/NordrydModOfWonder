@@ -1,11 +1,8 @@
 package com.nordryd.nmow.init;
 
-import static com.nordryd.nmow.block.types.BranchPartType.LEAF;
 import static com.nordryd.nmow.block.types.BranchPartType.SEED;
-import static com.nordryd.nmow.block.types.BranchPartType.STEM;
 import static com.nordryd.nmow.block.variant.VariantFactory.getBranchBlock;
 import static com.nordryd.nmow.init.ModItems.TEST_ITEM;
-import static com.nordryd.nmow.util.Randomizer.coinToss;
 import static com.nordryd.nmow.util.values.Dimensions.OVERWORLD;
 import static com.nordryd.nmow.util.values.HarvestLevel.DIAMOND;
 import static com.nordryd.nmow.util.values.ToolType.PICKAXE;
@@ -19,6 +16,7 @@ import com.nordryd.nmow.block.ModOre;
 import com.nordryd.nmow.block.properties.BlockProperties;
 import com.nordryd.nmow.block.properties.OreProperties;
 import com.nordryd.nmow.block.variant.Branches;
+import com.nordryd.nmow.world.gen.branch.RecursiveBranch;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -32,7 +30,7 @@ public interface ModBlocks {
     List<ModOre> MOD_ORES = new ArrayList<>();
 
     Block TEST_BLOCK = new ModBlock(
-            new BlockProperties("test_block").material(Material.SNOW).soundType(SoundType.SNOW).hardness(5.0f)
+            new BlockProperties("test_block").material(Material.SAND).soundType(SoundType.SNOW).hardness(5.0f)
                                              .resistance(15.0f).toolTypeRequired(PICKAXE).toolMaterialRequired(DIAMOND));
 
     Block TEST_ORE = new ModOre(
@@ -51,17 +49,15 @@ public interface ModBlocks {
         }
     };
 
-    Block BRANCHES = new Branches(new BlockProperties("branches").soundType(SoundType.PLANT).material(Material.PLANTS)) {
+    Block BRANCHES = new Branches(new BlockProperties("branches").soundType(SoundType.PLANT).material(Material.ROCK)) {
         @Override
-        public void onBlockAdded(final World world, final BlockPos pos, final IBlockState state) {
-            if ((state.getValue(BRANCH_SEGMENTS) == SEED) && coinToss()) {
-                world.setBlockState(pos.up(), getBranchBlock(STEM));
-                world.setBlockState(pos.up(2), getBranchBlock(LEAF));
-                world.setBlockState(pos.up().east(), getBranchBlock(LEAF));
-                world.setBlockState(pos.up().west(), getBranchBlock(LEAF));
-                world.setBlockState(pos.up().north(), getBranchBlock(LEAF));
-                world.setBlockState(pos.up().south(), getBranchBlock(LEAF));
+        public void onBlockAdded(final World worldIn, final BlockPos pos, final IBlockState state) {
+            if (state.equals(getBranchBlock(SEED))) {
+                new RecursiveBranch(worldIn, pos, 0.15);
             }
         }
+
+        // on block placed by was called twice. Because it was placed in the world and placed by a player? can we change this to only have it be called once?
+        // remember, every time one of these blocks is added, regardless of the variant, this will be called
     };
 }

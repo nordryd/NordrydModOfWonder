@@ -23,14 +23,6 @@ public class ModBiome extends Biome {
         MOD_BIOMES.add(this);
     }
 
-    public BiomeType getBiomeType() {
-        return biomeType;
-    }
-
-    public Type[] getTypes() {
-        return types;
-    }
-
     public final void registerModBiome() {
         setRegistryName(getBiomeName());
         BIOMES.register(this);

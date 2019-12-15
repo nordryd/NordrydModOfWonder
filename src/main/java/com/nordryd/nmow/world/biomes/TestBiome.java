@@ -19,7 +19,7 @@ public class TestBiome extends ModBiome {
         super(new BiomeProperties(name).setBaseHeight(0.1f).setHeightVariation(0.2f).setTemperature(0.2f)
                                        .setWaterColor(16711935), COOL, COLD);
         topBlock = TEST_BLOCK.getDefaultState();
-        fillerBlock = topBlock;
+        fillerBlock = TEST_BLOCK.getDefaultState();
 
         decorator.coalGen = new WorldGenMinable(TEST_ORE.getDefaultState(), 10);
         decorator.andesiteGen = new WorldGenMinable(BRANCHES.getDefaultState().withProperty(BRANCH_SEGMENTS, LEAF), 10);
