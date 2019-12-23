@@ -1,40 +1,25 @@
 package com.nordryd.nmow.registry;
 
-import static com.nordryd.nmow.init.ModBiomes.MOD_BIOMES;
-import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;
-import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
-import static net.minecraftforge.fml.common.registry.GameRegistry.registerWorldGenerator;
+import static com.nordryd.nmow.NordrydModOfWonder.LOGGER;
+import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
-import com.nordryd.nmow.util.IHasModel;
-import com.nordryd.nmow.world.biomes.ModBiome;
-import com.nordryd.nmow.world.gen.OreGenerator;
+import com.nordryd.nmow.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent.Register;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 
-@EventBusSubscriber
-public interface RegistryHandler {
+@Mod.EventBusSubscriber(bus = MOD)
+public class RegistryHandler {
     @SubscribeEvent
-    static void onItemRegister(final Register<Item> event) {
-        event.getRegistry().registerAll(MOD_ITEMS.toArray(new Item[0]));
+    public static void registerBlocks(final Register<Block> blockRegistryEvent) {
+        LOGGER.info("HELLO from Register Block");
     }
 
     @SubscribeEvent
-    static void onBlockRegister(final Register<Block> event) {
-        event.getRegistry().registerAll(MOD_BLOCKS.toArray(new Block[0]));
-    }
-
-    @SubscribeEvent
-    static void onModelRegister(final ModelRegistryEvent event) {
-        MOD_ITEMS.stream().filter(IHasModel.class::isInstance).forEach(item -> ((IHasModel) item).registerModels());
-        MOD_BLOCKS.stream().filter(IHasModel.class::isInstance).forEach(block -> ((IHasModel) block).registerModels());
-    }
-
-    static void preInitRegistries() {
-        registerWorldGenerator(new OreGenerator(), 0);
-        MOD_BIOMES.forEach(ModBiome::registerModBiome);
+    public static void registerItems(final Register<Item> itemRegistryEvent) {
+        itemRegistryEvent.getRegistry().registerAll(ModItems.MOD_ITEMS.toArray(new Item[0]));
+        LOGGER.info("items registered");
     }
 }

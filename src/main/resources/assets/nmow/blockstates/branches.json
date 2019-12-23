@@ -1,9 +1,0 @@
-{
-  "variants": {
-    "variant=seed": { "model": "nmow:branches_seed" },
-
-    "variant=stem": { "model": "nmow:branches_stem" },
-
-    "variant=leaf": { "model": "nmow:branches_leaf" }
-  }
-}
