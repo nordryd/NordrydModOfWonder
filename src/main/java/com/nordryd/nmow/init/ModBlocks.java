@@ -9,7 +9,7 @@ import static net.minecraftforge.common.ToolType.PICKAXE;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nordryd.nmow.block.ModBlock;
+import com.nordryd.nmow.blocks.ModBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 

@@ -1,4 +1,4 @@
-package com.nordryd.nmow.item;
+package com.nordryd.nmow.items;
 
 import static com.nordryd.nmow.NordrydModOfWonder.MODID;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;

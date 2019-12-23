@@ -1,4 +1,4 @@
-package com.nordryd.nmow.block;
+package com.nordryd.nmow.blocks;
 
 import static com.nordryd.nmow.NordrydModOfWonder.MODID;
 import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;

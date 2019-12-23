@@ -1,7 +1,10 @@
 {
-  "item.nmow.test_item":"TEST_ITEM",
-
-  "block.nmow.test_block": "TEST_BLOCK",
-
+  "item.nmow.test_item": "TEST ITEM",
+  "item.nmow.test_pickaxe": "TEST PICKAXE",
+  "item.nmow.test_sword": "TEST SWORD",
+  "item.nmow.test_shovel": "TEST SHOVEL",
+  "item.nmow.test_hoe": "TEST HOE",
+  "item.nmow.test_axe": "TEST AXE",
+  "block.nmow.test_block": "TEST BLOCK",
   "itemGroup.master": "NMOW: MASTER"
 }
