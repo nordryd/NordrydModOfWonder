@@ -1,5 +1,7 @@
 {
   "item.nmow.test_item":"TEST_ITEM",
 
+  "block.nmow.test_block": "TEST_BLOCK",
+
   "itemGroup.master": "NMOW: MASTER"
 }

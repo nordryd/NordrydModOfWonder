@@ -23,7 +23,7 @@ public class NordrydModOfWonder {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        LOGGER.info("HELLO FROM PREINIT");
+        LOGGER.info("preinit");
     }
 
     private void onClientStarting(final FMLClientSetupEvent event) {
