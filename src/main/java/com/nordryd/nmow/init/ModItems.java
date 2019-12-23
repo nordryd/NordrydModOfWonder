@@ -1,18 +1,18 @@
 package com.nordryd.nmow.init;
 
+import static com.nordryd.nmow.init.ModArmorMaterials.TEST_ARMOR_MATERIAL;
 import static com.nordryd.nmow.init.ModItemGroups.MASTER;
-import static com.nordryd.nmow.init.ModMaterials.TEST_TOOL_MATERIAL;
-import static com.nordryd.nmow.items.ModToolFactory.ModToolType.AXE;
-import static com.nordryd.nmow.items.ModToolFactory.ModToolType.HOE;
-import static com.nordryd.nmow.items.ModToolFactory.ModToolType.PICKAXE;
-import static com.nordryd.nmow.items.ModToolFactory.ModToolType.SHOVEL;
-import static com.nordryd.nmow.items.ModToolFactory.ModToolType.SWORD;
-import static com.nordryd.nmow.items.ModToolFactory.createModTool;
+import static com.nordryd.nmow.init.ModToolMaterials.TEST_TOOL_MATERIAL;
+import static com.nordryd.nmow.items.ModArmorFactory.createArmorSet;
+import static com.nordryd.nmow.items.ModToolFactory.createToolSet;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.nordryd.nmow.items.ModItem;
+import com.nordryd.nmow.util.enums.ModToolType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 
@@ -20,11 +20,7 @@ public interface ModItems {
     List<Item> MOD_ITEMS = new ArrayList<>();
 
     Item test_item = new ModItem("test_item", new Properties().group(MASTER));
-    Item test_pickaxe =
-            createModTool("test_pickaxe", PICKAXE, TEST_TOOL_MATERIAL, 69, 69f, new Item.Properties().group(MASTER));
-    Item test_sword = createModTool("test_sword", SWORD, TEST_TOOL_MATERIAL, 69, 69f, new Item.Properties().group(MASTER));
-    Item test_shovel =
-            createModTool("test_shovel", SHOVEL, TEST_TOOL_MATERIAL, 69, 69f, new Item.Properties().group(MASTER));
-    Item test_hoe = createModTool("test_hoe", HOE, TEST_TOOL_MATERIAL, 69, 69f, new Item.Properties().group(MASTER));
-    Item test_axe = createModTool("test_axe", AXE, TEST_TOOL_MATERIAL, 69, 69f, new Item.Properties().group(MASTER));
+
+    Map<ModToolType, Item> test_tool_set = createToolSet(TEST_TOOL_MATERIAL, new Properties().group(MASTER));
+    Map<EquipmentSlotType, Item> test_armor_set = createArmorSet(TEST_ARMOR_MATERIAL, new Properties().group(MASTER));
 }
