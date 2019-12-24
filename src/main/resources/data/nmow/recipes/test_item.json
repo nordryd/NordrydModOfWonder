@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients":
+  [
+
+    {
+      "item": "nmow:test_block",
+      "count": 1
+    }
+
+  ],
+
+  "result":
+  {
+    "item": "nmow:test_item",
+    "count": 9
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "_comment": "replace: true = overwrite other tags of the same name, false = merge with other tags of the same name",
+  "replace": false,
+  "values": [
+    "minecraft:red_mushroom",
+    "minecraft:brown_mushroom"
+  ]
+}

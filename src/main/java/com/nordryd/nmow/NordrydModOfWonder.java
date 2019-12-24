@@ -12,7 +12,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.Logger;
 
-@Mod("nmow")
+@Mod(NordrydModOfWonder.MODID)
 public class NordrydModOfWonder {
     public static final String MODID = "nmow";
     public static final Logger LOGGER = getLogger();
