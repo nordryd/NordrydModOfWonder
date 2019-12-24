@@ -16,4 +16,8 @@ public class ModBlock extends Block {
         MOD_BLOCKS.add(this);
         MOD_ITEMS.add(new BlockItem(this, itemProperties).setRegistryName(new ResourceLocation(MODID, registryName)));
     }
+
+    public ModBlock(final String registryName, final Item.Properties itemProperties, final Properties blockProperties) {
+        this(registryName, blockProperties, itemProperties);
+    }
 }

@@ -2,6 +2,7 @@ package com.nordryd.nmow;
 
 import static org.apache.logging.log4j.LogManager.getLogger;
 
+import com.nordryd.nmow.world.OreGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +25,7 @@ public class NordrydModOfWonder {
 
     private void setup(final FMLCommonSetupEvent event) {
         LOGGER.info("preinit");
+        OreGenerator.setup();
     }
 
     private void onClientStarting(final FMLClientSetupEvent event) {
