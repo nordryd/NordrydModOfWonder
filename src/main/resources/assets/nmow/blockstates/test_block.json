@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "nmow:test_block"
+    "": {
+      "model": "nmow:block/test_block"
     }
   }
 }

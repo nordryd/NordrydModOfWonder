@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "nmow:test_ore"
+    "": {
+      "model": "nmow:block/test_ore"
     }
   }
 }

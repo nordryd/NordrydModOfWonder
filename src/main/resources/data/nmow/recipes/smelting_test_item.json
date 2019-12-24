@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {"tag": "nmow:test_ore"},
+  "result": {"item": "nmow:test_item"},
+  "experience": 2.5,
+  "cookingTime": 200
+}

@@ -1,22 +1,15 @@
 package com.nordryd.nmow.items;
 
-import static com.nordryd.nmow.Main.proxy;
+import static com.nordryd.nmow.NordrydModOfWonder.MODID;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 
-import com.nordryd.nmow.items.properties.ItemProperties;
-import com.nordryd.nmow.util.IHasModel;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
-public class ModItem extends Item implements IHasModel {
-    public ModItem(final ItemProperties itemProperties) {
-        setUnlocalizedName(itemProperties.name());
-        setRegistryName(itemProperties.name());
-        setCreativeTab(itemProperties.creativeTab());
+public class ModItem extends Item {
+    public ModItem(final String registryName, final Properties properties) {
+        super(properties);
+        setRegistryName(new ResourceLocation(MODID, registryName));
         MOD_ITEMS.add(this);
-    }
-
-    @Override
-    public void registerModels() {
-        proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
