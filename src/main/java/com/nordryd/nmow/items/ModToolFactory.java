@@ -1,6 +1,6 @@
 package com.nordryd.nmow.items;
 
-import static com.nordryd.nmow.NordrydModOfWonder.MODID;
+import static com.nordryd.nmow.util.ModUtility.getResourceLocation;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
 import static com.nordryd.nmow.util.enums.ModToolType.AXE;
 import static com.nordryd.nmow.util.enums.ModToolType.HOE;
@@ -27,15 +27,15 @@ public class ModToolFactory {
         final Map<ModToolType, Item> toolSet = new EnumMap<>(ModToolType.class);
 
         toolSet.put(PICKAXE, new PickaxeItem(material, material.getPickaxeDmg(), material.getPickaxeSpeed(), properties)
-                .setRegistryName(MODID, material.getName() + "_pickaxe"));
+                .setRegistryName(getResourceLocation(material.getName() + "_pickaxe")));
         toolSet.put(SWORD, new SwordItem(material, material.getSwordDmg(), material.getSwordSpeed(), properties)
-                .setRegistryName(MODID, material.getName() + "_sword"));
+                .setRegistryName(getResourceLocation(material.getName() + "_sword")));
         toolSet.put(SHOVEL, new ShovelItem(material, material.getShovelDmg(), material.getShovelSpeed(), properties)
-                .setRegistryName(MODID, material.getName() + "_shovel"));
+                .setRegistryName(getResourceLocation(material.getName() + "_shovel")));
         toolSet.put(AXE, new AxeItem(material, material.getAxeDmg(), material.getAxeSpeed(), properties)
-                .setRegistryName(MODID, material.getName() + "_axe"));
+                .setRegistryName(getResourceLocation(material.getName() + "_axe")));
         toolSet.put(HOE, new HoeItem(material, material.getHoeSpeed(), properties)
-                .setRegistryName(MODID, material.getName() + "_hoe"));
+                .setRegistryName(getResourceLocation(material.getName() + "_hoe")));
 
         MOD_ITEMS.addAll(toolSet.values());
         return toolSet;

@@ -2,27 +2,28 @@ package com.nordryd.nmow.init;
 
 import static com.nordryd.nmow.NordrydModOfWonder.MODID;
 import static net.minecraft.item.crafting.Ingredient.fromItems;
+import static net.minecraft.util.SoundEvents.AMBIENT_CAVE;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum ModArmorMaterials implements IArmorMaterial {
-    TEST_ARMOR_MATERIAL("test", 500, 69, ModItems.test_item, "entity.ender_dragon.growl", 0f, 69 * 2, 69 * 4, 69 * 3, 69);
+    TEST_ARMOR_MATERIAL("test", 500, 69, ModItems.test_item, AMBIENT_CAVE, 0f, 69 * 2, 69 * 4, 69 * 3, 69);
 
     private static final int[] MAX_DMG_ARRAY = new int[] {13, 15, 16, 11};
 
-    private final String name, equipSound;
+    private final String name;
+    private final SoundEvent equipSound;
     private final int durability, enchantability;
     private final float toughness;
     private final Item repairItem;
     private final int[] damageReductionAmounts;
 
     ModArmorMaterials(final String name, final int durability, final int enchantability, final Item repairItem,
-            final String equipSound, final float toughness, final int headReduction, final int chestReduction,
+            final SoundEvent equipSound, final float toughness, final int headReduction, final int chestReduction,
             final int legReduction, final int feetReduction) {
         this.name = name;
         this.equipSound = equipSound;
@@ -51,7 +52,7 @@ public enum ModArmorMaterials implements IArmorMaterial {
 
     @Override
     public SoundEvent getSoundEvent() {
-        return new SoundEvent(new ResourceLocation(equipSound));
+        return equipSound;
     }
 
     @Override

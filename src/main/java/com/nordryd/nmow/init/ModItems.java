@@ -1,6 +1,8 @@
 package com.nordryd.nmow.init;
 
 import static com.nordryd.nmow.init.ModArmorMaterials.TEST_ARMOR_MATERIAL;
+import static com.nordryd.nmow.init.ModEntities.registerEntitySpawnEgg;
+import static com.nordryd.nmow.init.ModEntities.tutorial_entity;
 import static com.nordryd.nmow.init.ModItemGroups.MASTER;
 import static com.nordryd.nmow.init.ModToolMaterials.TEST_TOOL_MATERIAL;
 import static com.nordryd.nmow.items.ModArmorFactory.createArmorSet;
@@ -20,6 +22,7 @@ public interface ModItems {
     List<Item> MOD_ITEMS = new ArrayList<>();
 
     Item test_item = new ModItem("test_item", new Properties().group(MASTER));
+    Item test_spawn_egg = registerEntitySpawnEgg("test_spawn_egg", tutorial_entity, 0x2f5882, 0x6f1499);
 
     Map<ModToolType, Item> test_tool_set = createToolSet(TEST_TOOL_MATERIAL, new Properties().group(MASTER));
     Map<EquipmentSlotType, Item> test_armor_set = createArmorSet(TEST_ARMOR_MATERIAL, new Properties().group(MASTER));

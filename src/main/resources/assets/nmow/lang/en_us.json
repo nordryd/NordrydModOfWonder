@@ -9,6 +9,8 @@
   "item.nmow.test_chestplate": "TEST CHESTPLATE",
   "item.nmow.test_leggings": "TEST LEGGINGS",
   "item.nmow.test_boots": "TEST BOOTS",
+  "item.nmow.test_entity_egg": "TEST ENTITY EGG",
   "block.nmow.test_block": "TEST BLOCK",
-  "itemGroup.master": "NMOW: MASTER"
+  "itemGroup.master": "NMOW: MASTER",
+  "entity.nmow.test_entity": "TEST ENTITY"
 }

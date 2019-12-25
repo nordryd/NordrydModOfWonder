@@ -22,6 +22,6 @@ public interface ModBlocks {
             Block.Properties.create(SAND).hardnessAndResistance(5f, 15f).lightValue(10).sound(SNOW)
                             .harvestLevel(DIAMOND.getLevel()).harvestTool(PICKAXE), new Item.Properties().group(MASTER));
     Block test_ore = new ModBlock("test_ore", new Item.Properties().group(MASTER),
-            Block.Properties.create(ROCK).hardnessAndResistance(5f, 15f).lightValue(10).sound(LANTERN)
+            Block.Properties.create(ROCK).hardnessAndResistance(5f, 15f).lightValue(4).sound(LANTERN)
                             .harvestLevel(DIAMOND.getLevel()).harvestTool(PICKAXE));
 }
