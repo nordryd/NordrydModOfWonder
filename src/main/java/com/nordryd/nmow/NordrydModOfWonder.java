@@ -1,9 +1,9 @@
 package com.nordryd.nmow;
 
 import static com.nordryd.nmow.config.NMOWConfig.loadConfig;
+import static com.nordryd.nmow.registry.RegistryHandler.registerEntityRenders;
 import static org.apache.logging.log4j.LogManager.getLogger;
 
-import com.nordryd.nmow.client.render.TestRenderRegistry;
 import com.nordryd.nmow.config.NMOWConfig;
 import com.nordryd.nmow.world.OreGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,7 +38,7 @@ public class NordrydModOfWonder {
     }
 
     private void onClientStarting(final FMLClientSetupEvent event) {
-        TestRenderRegistry.registerEntityRenders();
+        registerEntityRenders();
         LOGGER.info("client registries registered");
     }
 

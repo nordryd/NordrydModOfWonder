@@ -22,7 +22,7 @@ public interface ModItems {
     List<Item> MOD_ITEMS = new ArrayList<>();
 
     Item test_item = new ModItem("test_item", new Properties().group(MASTER));
-    Item test_spawn_egg = registerEntitySpawnEgg("test_spawn_egg", tutorial_entity, 0x2f5882, 0x6f1499);
+    Item test_spawn_egg = registerEntitySpawnEgg("test_entity_spawn_egg", tutorial_entity, 0x2f5882, 0x6f1499);
 
     Map<ModToolType, Item> test_tool_set = createToolSet(TEST_TOOL_MATERIAL, new Properties().group(MASTER));
     Map<EquipmentSlotType, Item> test_armor_set = createArmorSet(TEST_ARMOR_MATERIAL, new Properties().group(MASTER));

@@ -5,8 +5,10 @@ import static com.nordryd.nmow.init.ModBlocks.MOD_BLOCKS;
 import static com.nordryd.nmow.init.ModEntities.registerEntityWorldSpawn;
 import static com.nordryd.nmow.init.ModEntities.tutorial_entity;
 import static com.nordryd.nmow.init.ModItems.MOD_ITEMS;
+import static net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler;
 import static net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD;
 
+import com.nordryd.nmow.entities.TestEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
@@ -34,5 +36,9 @@ public class RegistryHandler {
     public static void registerEntities(final Register<EntityType<?>> entityRegisterEvent) {
         entityRegisterEvent.getRegistry().register(tutorial_entity);
         registerEntityWorldSpawn(tutorial_entity, Biomes.BADLANDS, Biomes.PLAINS, Biomes.FLOWER_FOREST, Biomes.RIVER);
+    }
+
+    public static void registerEntityRenders() {
+        registerEntityRenderingHandler(TestEntity.class, new TestEntity.Render.RenderFactory());
     }
 }

@@ -8,4 +8,8 @@ public class ModUtility {
     public static ResourceLocation getResourceLocation(final String resource) {
         return new ResourceLocation(MODID, resource);
     }
+
+    public static ResourceLocation getEntityModelResourceLocation(final String resource){
+        return getResourceLocation("textures/entity/" + resource);
+    }
 }
